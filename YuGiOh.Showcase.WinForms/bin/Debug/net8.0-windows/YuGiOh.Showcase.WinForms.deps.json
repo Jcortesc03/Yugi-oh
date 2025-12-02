@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "YuGiOh.Showcase.WinForms/1.0.0": {
+        "runtime": {
+          "YuGiOh.Showcase.WinForms.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "YuGiOh.Showcase.WinForms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
