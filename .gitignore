@@ -1,0 +1,53 @@
+###############################
+# Visual Studio / .NET Ignore #
+###############################
+
+# Carpeta interna de Visual Studio (causa errores de Git)
+.vs/
+
+# Compilación
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Archivos generados automáticamente
+*.user
+*.suo
+*.userprefs
+*.cache
+*.filelist
+*.ilk
+*.log
+*.pdb
+*.tmp
+*.dbmdl
+*.vshost.*
+*.ipch
+
+# Configuración de VS
+*.psess
+*.vsp
+*.vspscc
+
+# Paquetes NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.assets.json
+
+# Publicaciones
+publish/
+out/
+
+# Designer
+*.Designer.cs
+
+# Resx compilados
+*.resources
+
+###############################
+# Fin .gitignore
+###############################
+

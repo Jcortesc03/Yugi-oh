@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuGiOh.Showcase.WinForms", "YuGiOh.Showcase.WinForms\YuGiOh.Showcase.WinForms.csproj", "{22DD2075-F949-4B39-8C0B-5EB31ED25B63}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuGiOh.Showcase.Application", "YuGiOh.Showcase.Application\YuGiOh.Showcase.Application.csproj", "{AB1DA575-FB70-436B-9675-25826DB66941}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuGiOh.Showcase.Infrastructure", "YuGiOh.Showcase.Infrastructure\YuGiOh.Showcase.Infrastructure.csproj", "{CCD34A6B-1F85-47FA-898F-F427B9ECB251}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{2B4B840A-CA38-47EF-92F8-9F42C8A77D20}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
