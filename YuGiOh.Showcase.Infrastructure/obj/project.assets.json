@@ -1,48 +1,67 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "YuGiOh.Showcase.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/YuGiOh.Showcase.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/YuGiOh.Showcase.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "YuGiOh.Showcase.Domain/1.0.0": {
+      "type": "project",
+      "path": "../YuGiOh.Showcase.Domain/YuGiOh.Showcase.Domain.csproj",
+      "msbuildProject": "../YuGiOh.Showcase.Domain/YuGiOh.Showcase.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "YuGiOh.Showcase.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\PC 105-18\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\juanc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj",
       "projectName": "YuGiOh.Showcase.Infrastructure",
-      "projectPath": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\PC 105-18\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\juanc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\PC 105-18\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\juanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj": {
+              "projectPath": "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

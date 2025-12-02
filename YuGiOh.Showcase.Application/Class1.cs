@@ -1,6 +1,6 @@
 ﻿namespace YuGiOh.Showcase.Application;
 
-public class Class1
+public class Cartas
 {
 
 }

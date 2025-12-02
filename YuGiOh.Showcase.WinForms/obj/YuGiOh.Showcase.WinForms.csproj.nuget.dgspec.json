@@ -1,34 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj": {}
+    "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj": {
+    "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
+        "projectUniqueName": "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
         "projectName": "YuGiOh.Showcase.WinForms",
-        "projectPath": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
-        "packagesPath": "C:\\Users\\PC 105-18\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.WinForms\\obj\\",
+        "projectPath": "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
+        "packagesPath": "C:\\Users\\juanc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.WinForms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC 105-18\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\juanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
