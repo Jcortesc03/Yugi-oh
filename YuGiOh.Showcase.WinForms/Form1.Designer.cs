@@ -467,12 +467,12 @@ partial class Form1
         // 
         btnsalir.BackColor = Color.OrangeRed;
         btnsalir.FlatStyle = FlatStyle.Flat;
-        btnsalir.Location = new Point(901, 754);
+        btnsalir.Location = new Point(901, 737);
         btnsalir.Margin = new Padding(3, 4, 3, 4);
         btnsalir.Name = "btnsalir";
         btnsalir.Size = new Size(109, 51);
         btnsalir.TabIndex = 37;
-        btnsalir.Text = "Salir del Juego";
+        btnsalir.Text = "Salir del juego";
         btnsalir.UseVisualStyleBackColor = false;
         btnsalir.Click += btnsalir_Click;
         // 
@@ -481,6 +481,7 @@ partial class Form1
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1089, 1128);
+        ControlBox = false;
         Controls.Add(btnsalir);
         Controls.Add(btnJugar);
         Controls.Add(btnDetalles);
@@ -513,10 +514,9 @@ partial class Form1
         Controls.Add(carta2j1);
         Controls.Add(carta1j1);
         Controls.Add(fondo);
-        FormBorderStyle = FormBorderStyle.Fixed3D;
+        FormBorderStyle = FormBorderStyle.None;
         Margin = new Padding(3, 4, 3, 4);
         Name = "Form1";
-        StartPosition = FormStartPosition.CenterScreen;
         ((System.ComponentModel.ISupportInitialize)fondo).EndInit();
         ((System.ComponentModel.ISupportInitialize)carta1j1).EndInit();
         ((System.ComponentModel.ISupportInitialize)carta2j1).EndInit();

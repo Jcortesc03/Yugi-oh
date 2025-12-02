@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pbcartas = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pbcartas).BeginInit();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // pbcartas
+            // pictureBox1
             // 
-            pbcartas.Location = new Point(-9, -9);
-            pbcartas.Name = "pbcartas";
-            pbcartas.Size = new Size(366, 510);
-            pbcartas.TabIndex = 0;
-            pbcartas.TabStop = false;
+            pictureBox1.Location = new Point(-10, -9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(323, 384);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // carta
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(347, 488);
+            ClientSize = new Size(304, 366);
             ControlBox = false;
-            Controls.Add(pbcartas);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(pictureBox1);
             Name = "carta";
-            ((System.ComponentModel.ISupportInitialize)pbcartas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        public PictureBox pbcartas;
+        private PictureBox pictureBox1;
     }
 }
