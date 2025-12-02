@@ -8,26 +8,35 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ROG\\.nuget\\packages\\": {}
+    "C:\\Users\\PC 105-18\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj",
       "projectName": "YuGiOh.Showcase.Domain",
-      "projectPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj",
-      "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\obj\\",
+      "projectPath": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj",
+      "packagesPath": "C:\\Users\\PC 105-18\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC 105-18\\OneDrive\\Desktop\\yugi-oh\\Yugi-oh\\Yugi-oh\\YuGiOh.Showcase.Domain\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\PC 105-18\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
