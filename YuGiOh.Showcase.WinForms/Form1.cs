@@ -15,6 +15,17 @@ namespace YuGiOh.Showcase.WinForms
         public Form1()
         {
             InitializeComponent();
+
+            // --- Aumentar ventana para que no corte cartas ---
+            this.ClientSize = new Size(925, 950);
+
+
+            btnDetalles.BringToFront();
+            btnJugar.BringToFront();
+            btnsalir.BringToFront();
+            btnBocaabajo.BringToFront();
+            btbocaarriba.BringToFront();
+
             AjustarTamanos();
             PosicionarCartas();
             ConfigurarClicks();
@@ -22,11 +33,13 @@ namespace YuGiOh.Showcase.WinForms
             RepartirCartas();
         }
 
+
         private PictureBox cartaSeleccionada;
 
         private void ConfigurarClicks()
         {
-            foreach (var pb in this.Controls.OfType<PictureBox>())
+            // 👉 Todos los PictureBox dentro del panel
+            foreach (var pb in panel1.Controls.OfType<PictureBox>())
             {
                 pb.Click += (s, e) =>
                 {
@@ -38,6 +51,7 @@ namespace YuGiOh.Showcase.WinForms
         }
 
 
+
         // -----------------------------------------
         // CARGA TODAS LAS CARTAS DE LA CARPETA
         // -----------------------------------------
@@ -45,11 +59,12 @@ namespace YuGiOh.Showcase.WinForms
 
         private void CargarDeck()
         {
-            string path = Path.Combine(Application.StartupPath, "imagenes");
+            // Carpeta "imagenes" al lado del .exe (funciona en cualquier PC)
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "imagenes");
 
             if (!Directory.Exists(path))
             {
-                MessageBox.Show("La carpeta 'imagenes' no existe:\n" + path);
+                MessageBox.Show("No existe la carpeta 'imagenes' en:\n" + path);
                 return;
             }
 
@@ -62,13 +77,13 @@ namespace YuGiOh.Showcase.WinForms
 
             if (archivos.Length == 0)
             {
-                MessageBox.Show("No se encontraron imágenes válidas en:\n" + path);
+                MessageBox.Show("No se encontraron imágenes en:\n" + path);
                 return;
             }
 
             deck.Clear();
 
-            foreach (var archivo in archivos)
+            foreach (string archivo in archivos)
             {
                 try
                 {
@@ -90,35 +105,49 @@ namespace YuGiOh.Showcase.WinForms
         {
             Random rnd = new Random();
 
-            // SOLO cartas de jugador 1 y 2
-            PictureBox[] cartasJugadores =
+            // Mazo del jugador 1 (10 cartas únicas)
+            PictureBox[] cartasJ1 =
             {
-        // Jugador 1
         carta1j1, carta2j1, carta3j1, carta4j1, carta5j1,
-        carta6j1, carta7j1, carta8j1, carta9j1, carta10j1,
+        carta6j1, carta7j1, carta8j1, carta9j1, carta10j1
+    };
 
-        // Jugador 2
+            // Mazo del jugador 2 (10 cartas únicas)
+            PictureBox[] cartasJ2 =
+            {
         carta1j2, carta2j2, carta3j2, carta4j2, carta5j2,
         carta6j2, carta7j2, carta8j2, carta9j2, carta10j2
     };
 
-            if (deck.Count == 0)
+            // ---- JUGADOR 1: cartas sin repetir ----
+            List<Image> deckJ1 = new List<Image>(deck);
+
+            foreach (PictureBox pb in cartasJ1)
             {
-                MessageBox.Show("El deck está vacío.");
-                return;
+                int index = rnd.Next(deckJ1.Count);
+                pb.Image = deckJ1[index];
+                imagenOriginal[pb] = deckJ1[index];
+
+                deckJ1.RemoveAt(index); // evita repetición en J1
             }
 
-            foreach (PictureBox pb in cartasJugadores)
-            {
-                int index = rnd.Next(deck.Count);
-                pb.Image = deck[index];
+            // ---- JUGADOR 2: cartas sin repetir ----
+            // Se usa un deck independiente para que J1 y J2 puedan compartir carta
+            List<Image> deckJ2 = new List<Image>(deck);
 
-                // Guardar la imagen REAL
-                imagenOriginal[pb] = deck[index];
+            foreach (PictureBox pb in cartasJ2)
+            {
+                int index = rnd.Next(deckJ2.Count);
+                pb.Image = deckJ2[index];
+                imagenOriginal[pb] = deckJ2[index];
+
+                deckJ2.RemoveAt(index); // evita repetición en J2
             }
 
+            // Cartas especiales
+            Guardarcarta1.Image = Properties.Resources.parte_atrasver;
+            Guardarcarta2.Image = Properties.Resources.parte_atrasver;
 
-            // sEstos van vacíos o con parte de atrás:
             ataquej1.Image = Properties.Resources.parteatrasmor;
             defensaj1.Image = Properties.Resources.parteatrasgris;
 
@@ -126,52 +155,43 @@ namespace YuGiOh.Showcase.WinForms
             defensaj2.Image = Properties.Resources.parteatrasgris;
         }
 
-
         private void PosicionarCartas()
         {
-            int startX = 260;   // posición horizontal inicial
-            int espacio = 110;  // espacio entre cartas
+            int startX = 200;
+            int espacio = 100;
 
-            // FILA: cartas en mano jugador 1
+            // Fila jugador 1
             PictureBox[] manoJ1 = { carta1j1, carta2j1, carta3j1, carta4j1, carta5j1 };
 
-            // FILA: magias/trampas jugador 1
-            PictureBox[] magiasJ1 = { carta6j1, carta7j1, carta8j1, carta9j1, carta10j1 };
-
-            // FILA: magias/trampas jugador 2
-            PictureBox[] magiasJ2 = { carta6j2, carta7j2, carta8j2, carta9j2, carta10j2 };
-
-            // FILA: cartas en mano jugador 2
-            PictureBox[] manoJ2 = { carta1j2, carta2j2, carta3j2, carta4j2, carta5j2 };
-
-            // UBICAR MANO J1 (PRIMERA FILA)
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < manoJ1.Length; i++)
                 manoJ1[i].Location = new Point(startX + i * espacio, 20);
 
-            // UBICAR MAGIAS/T J1 (SEGUNDA FILA)
-            for (int i = 0; i < 5; i++)
+            // Magias/trampas J1
+            PictureBox[] magiasJ1 = { carta6j1, carta7j1, carta8j1, carta9j1, carta10j1 };
+
+            for (int i = 0; i < magiasJ1.Length; i++)
                 magiasJ1[i].Location = new Point(startX + i * espacio, 160);
 
-            // UBICAR MAGIAS/T J2 (CUARTA FILA)
-            for (int i = 0; i < 5; i++)
-                magiasJ2[i].Location = new Point(startX + i * espacio, 680);
+            // Zonas ataque/defensa
+            ataquej1.Location = new Point(350, 300);
+            defensaj1.Location = new Point(450, 300);
 
-            // UBICAR MANO J2 (QUINTA FILA)
-            for (int i = 0; i < 5; i++)
-                manoJ2[i].Location = new Point(startX + i * espacio, 830);
+            ataquej2.Location = new Point(350, 430);
+            defensaj2.Location = new Point(450, 430);
 
-            // CARTAS “MAZO”
-            Guardarcarta1.Location = new Point(60, 160);
-            Guardarcarta2.Location = new Point(60, 680);
+            // Magias/trampas J2
+            PictureBox[] magiasJ2 = { carta6j2, carta7j2, carta8j2, carta9j2, carta10j2 };
 
-            // ZONAS DE ATAQUE / DEFENSA
-            ataquej1.Location = new Point(430, 330);
-            defensaj1.Location = new Point(580, 330);
+            for (int i = 0; i < magiasJ2.Length; i++)
+                magiasJ2[i].Location = new Point(startX + i * espacio, 560);
 
-            ataquej2.Location = new Point(430, 530);
-            defensaj2.Location = new Point(580, 530);
+            // Mano J2
+            PictureBox[] manoJ2 = { carta1j2, carta2j2, carta3j2, carta4j2, carta5j2 };
 
+            for (int i = 0; i < manoJ2.Length; i++)
+                manoJ2[i].Location = new Point(startX + i * espacio, 700);
         }
+
 
         // -----------------------------------------
         // ABRIR CARTA AL HACER CLIC
@@ -200,48 +220,54 @@ namespace YuGiOh.Showcase.WinForms
         }
         private void AjustarTamanos()
         {
-            foreach (var pb in Controls.OfType<PictureBox>())
+            foreach (var pb in panel1.Controls.OfType<PictureBox>())
             {
-                if (pb.Name != "fondo") // 👉NO modificar el fondo
-                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Width = 86;
+                pb.Height = 124;
             }
         }
+
+
 
 
         private void btnBocaabajo_Click_1(object sender, EventArgs e)
         {
-            if (cartaSeleccionada != null)
-                cartaSeleccionada.Image = Properties.Resources.parte_atras;
+            if (cartaSeleccionada == null) return;
+            if (!imagenOriginal.ContainsKey(cartaSeleccionada)) return;
+
+            cartaSeleccionada.Image = Properties.Resources.parte_atras;
         }
+
 
 
         private void btnDetalles_Click_1(object sender, EventArgs e)
         {
-            if (cartaSeleccionada != null && cartaSeleccionada.Image != null)
+            if (cartaSeleccionada == null || cartaSeleccionada.Image == null)
             {
-                carta ver = new carta(cartaSeleccionada.Image);
-                ver.Show();
+                MessageBox.Show("Seleccione una carta");
+                return;
             }
+
+            carta ver = new carta(cartaSeleccionada.Image);
+            ver.Show();
         }
+
 
         private void btnJugar_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Comienza el duelo");
         }
 
-        private void fondo_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void btbocaarriba_Click(object sender, EventArgs e)
         {
             if (cartaSeleccionada == null) return;
+            if (!imagenOriginal.ContainsKey(cartaSeleccionada)) return;
 
-            if (imagenOriginal.ContainsKey(cartaSeleccionada))
-            {
-                cartaSeleccionada.Image = imagenOriginal[cartaSeleccionada];
-            }
+            cartaSeleccionada.Image = imagenOriginal[cartaSeleccionada];
         }
+
+
     }
 }
