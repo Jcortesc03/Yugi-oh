@@ -12,9 +12,11 @@ namespace YuGiOh.Showcase.WinForms
 {
     public partial class carta : Form
     {
-        public carta()
+        public carta(Image imagen)
         {
             InitializeComponent();
+            pictureBox1.Image = imagen;
         }
     }
 }
+

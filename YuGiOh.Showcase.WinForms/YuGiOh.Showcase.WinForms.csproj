@@ -15,6 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Content Include="bin\Debug\net8.0-windows\imagenes\exodiaelprohibido.jpg" />
 		<Content Include="imagenes\intro.mp4">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
