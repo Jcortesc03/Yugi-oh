@@ -3,13 +3,13 @@ namespace YuGiOh.Showcase.Domain.Entities.Carta{
     {
         public int Id {get; set;}
         public string Nombre {get; set; }
-        public string Atributo {get; set; }
-        public TipoAtributo Tipo {get; set; }
+        public TipoCarta Tipo {get; set; }
+        public TipoAtributo Atributo {get; set; }
         public string Descripcion {get; set;}
         public int NivelRango {get; set; }
         public int Ataque {get; set; }
         public int Defensa {get; set; }
-        public Carta(int Id, string Nombre, string Atributo, TipoAtributo Tipo, string Descripcion, int NivelRango,  int Ataque, int Defensa)
+        public Carta(int Id, string Nombre, TipoCarta Tipo, TipoAtributo Atributo, string Descripcion, int NivelRango,  int Ataque, int Defensa)
         {
             this.Id = Id;
             this.Nombre = Nombre;
@@ -21,7 +21,7 @@ namespace YuGiOh.Showcase.Domain.Entities.Carta{
             this.Defensa = Defensa;
         }
 
-        public Atacar()
+        public void Atacar()
         {
             
         }

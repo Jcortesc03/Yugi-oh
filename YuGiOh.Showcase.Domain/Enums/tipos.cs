@@ -1,4 +1,4 @@
-public enum tipoCarta //Para evitar q no use un tipo que no existe
+public enum TipoCarta //Para evitar q no use un tipo que no existe
     {
         Dark,
         Light,
@@ -12,7 +12,7 @@ public enum tipoCarta //Para evitar q no use un tipo que no existe
     {
         agua,
         bestia,
-        bestaAlada,
+        bestiaAlada,
         ciberso,
         demonio,
         dinosaurio,

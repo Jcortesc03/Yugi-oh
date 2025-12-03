@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YuGiOh.Showcase.WinForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd2fc4b9fbf5d6027a34d0f2b294956861657ef4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd90556f7b2c23721d409842b6cd645766d63d2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("YuGiOh.Showcase.WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YuGiOh.Showcase.WinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
