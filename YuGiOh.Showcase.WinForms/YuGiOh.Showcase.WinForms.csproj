@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="imagenes\anubis.jpg" />
+	  <None Remove="imagenes\brazoderechodelprohibido.jpg" />
+	  <None Remove="imagenes\brazoizquierdodelprohibido.jpg" />
+	  <None Remove="imagenes\conductordearmazon.jpg" />
+	  <None Remove="imagenes\conejooscuro.jpg" />
+	  <None Remove="imagenes\descendientedeldragonsolar.jpg" />
+	  <None Remove="imagenes\dragonaladodera.jpg" />
+	  <None Remove="imagenes\dragonblancodeojosazules.jpg" />
+	  <None Remove="imagenes\exodiagross.jpg" />
+	  <None Remove="imagenes\golemdemecanismoantiguodefinitivo.jpg" />
+	  <None Remove="imagenes\magodelmandatodelcaos.jpg" />
+	  <None Remove="imagenes\obeliscoelatormentadorarchidemonio.jpg" />
+	  <None Remove="imagenes\obelisknegro.jpg" />
+	  <None Remove="imagenes\obeliskthetormentor.jpg" />
+	  <None Remove="imagenes\piernaderechadelprohibido.jpg" />
+	  <None Remove="imagenes\piernaizquierdadelprohibido.jpg" />
+	  <None Remove="imagenes\sabionegro.jpg" />
+	  <None Remove="imagenes\slifereldragondelcielo.jpg" />
+	  <None Remove="imagenes\vergadelmago.jpg" />
+	  <None Remove="imagenes\zorc.jpg" />
+	  <None Remove="imagenes\zorcnecrophades.jpg" />
+	  <None Remove="imagenes\zushinelgigantedurmiente.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="LibVLCSharp" Version="3.7.0" />
+		<PackageReference Include="LibVLCSharp.WinForms" Version="3.7.0" />
+		<PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.20" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="imagenes\anubis.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\brazoderechodelprohibido.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\brazoizquierdodelprohibido.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\conductordearmazon.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\conejooscuro.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\descendientedeldragonsolar.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\dragonaladodera.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\dragonblancodeojosazules.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\exodiaelprohibido.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\exodiagross.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\golemdemecanismoantiguodefinitivo.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\intro.mp4">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\magodelmandatodelcaos.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\obeliscoelatormentadorarchidemonio.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\obelisknegro.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\obeliskthetormentor.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\piernaderechadelprohibido.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\piernaizquierdadelprohibido.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\sabionegro.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\slifereldragondelcielo.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\vergadelmago.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\zorc.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\zorcnecrophades.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="imagenes\zushinelgigantedurmiente.jpg">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="bin\Debug\net8.0-windows\" />
+	</ItemGroup>
+
+</Project>
