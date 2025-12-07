@@ -1266,19 +1266,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ROG\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
       "projectName": "YuGiOh.Showcase.WinForms",
-      "projectPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
-      "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.WinForms\\obj\\",
+      "projectPath": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.WinForms\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

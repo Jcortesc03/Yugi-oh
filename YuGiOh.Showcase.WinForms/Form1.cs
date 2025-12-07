@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-
 
 namespace YuGiOh.Showcase.WinForms
 {
@@ -11,241 +11,283 @@ namespace YuGiOh.Showcase.WinForms
     {
         private List<Image> deck = new List<Image>();
         private Dictionary<PictureBox, Image> imagenOriginal = new Dictionary<PictureBox, Image>();
+        private PictureBox cartaSeleccionada;
+
+        // PictureBoxes
+        private PictureBox carta1j1, carta2j1, carta3j1, carta4j1, carta5j1;
+        private PictureBox carta6j1, carta7j1, carta8j1, carta9j1, carta10j1;
+        private PictureBox carta1j2, carta2j2, carta3j2, carta4j2, carta5j2;
+        private PictureBox carta6j2, carta7j2, carta8j2, carta9j2, carta10j2;
+        private PictureBox Guardarcarta1, Guardarcarta2;
+        private PictureBox ataquej1, defensaj1, ataquej2, defensaj2;
+
+        // Botones
+        private Button btbocaarriba, btnBocaabajo, btnDetalles, btnJugar, btnsalir;
+        private Panel panel1;
 
         public Form1()
         {
             InitializeComponent();
 
-            // --- Aumentar ventana para que no corte cartas ---
-            this.ClientSize = new Size(925, 950);
+            // 🎯 TODO SE CREA AQUÍ EN EL CONSTRUCTOR
+            CrearPanel();
+            CrearCartasJugador1();
+            CrearCartasJugador2();
+            CrearZonasEspeciales();
+            CrearBotones();
 
-
-            btnDetalles.BringToFront();
-            btnJugar.BringToFront();
-            btnsalir.BringToFront();
-            btnBocaabajo.BringToFront();
-            btbocaarriba.BringToFront();
-
-            AjustarTamanos();
-            PosicionarCartas();
+            ConfigurarFormulario();
             ConfigurarClicks();
             CargarDeck();
             RepartirCartas();
         }
 
-
-        private PictureBox cartaSeleccionada;
-
-        private void ConfigurarClicks()
+        // ===============================================
+        // CREAR PANEL DE FONDO
+        // ===============================================
+        private void CrearPanel()
         {
-            // 👉 Todos los PictureBox dentro del panel
-            foreach (var pb in panel1.Controls.OfType<PictureBox>())
+            panel1 = new Panel
             {
-                pb.Click += (s, e) =>
-                {
-                    cartaSeleccionada = (PictureBox)s;
-                };
-            }
+                BackgroundImage = Properties.Resources.fondo,
+                BackgroundImageLayout = ImageLayout.Stretch,
+                Dock = DockStyle.Fill
+            };
+            this.Controls.Add(panel1);
+        }
 
+        // ===============================================
+        // CREAR CARTAS JUGADOR 1
+        // ===============================================
+        private void CrearCartasJugador1()
+        {
+            // Fila 1 - Mano J1 (arriba)
+            carta1j1 = CrearCarta("carta1j1", 250, 15);
+            carta2j1 = CrearCarta("carta2j1", 360, 15);
+            carta3j1 = CrearCarta("carta3j1", 470, 15);
+            carta4j1 = CrearCarta("carta4j1", 580, 15);
+            carta5j1 = CrearCarta("carta5j1", 690, 15);
+
+            // Fila 2 - Magias/Trampas J1
+            carta6j1 = CrearCarta("carta6j1", 250, 150);
+            carta7j1 = CrearCarta("carta7j1", 360, 150);
+            carta8j1 = CrearCarta("carta8j1", 470, 150);
+            carta9j1 = CrearCarta("carta9j1", 580, 150);
+            carta10j1 = CrearCarta("carta10j1", 690, 150);
+        }
+
+        // ===============================================
+        // CREAR CARTAS JUGADOR 2
+        // ===============================================
+        private void CrearCartasJugador2()
+        {
+            // Fila 1 - Magias/Trampas J2 (MÁS ARRIBA)
+            carta6j2 = CrearCarta("carta6j2", 250, 420);
+            carta7j2 = CrearCarta("carta7j2", 360, 420);
+            carta8j2 = CrearCarta("carta8j2", 470, 420);
+            carta9j2 = CrearCarta("carta9j2", 580, 420);
+            carta10j2 = CrearCarta("carta10j2", 690, 420);
+
+            // Fila 2 - Mano J2 (abajo)
+            carta1j2 = CrearCarta("carta1j2", 250, 560);
+            carta2j2 = CrearCarta("carta2j2", 360, 560);
+            carta3j2 = CrearCarta("carta3j2", 470, 560);
+            carta4j2 = CrearCarta("carta4j2", 580, 560);
+            carta5j2 = CrearCarta("carta5j2", 690, 560);
+        }
+
+        // ===============================================
+        // CREAR ZONAS ESPECIALES
+        // ===============================================
+        private void CrearZonasEspeciales()
+        {
+            // Mazos (lado izquierdo)
+            Guardarcarta1 = CrearCarta("Guardarcarta1", 80, 150);
+            Guardarcarta2 = CrearCarta("Guardarcarta2", 80, 420);
+
+            // Zonas de ataque/defensa (más a la derecha y separadas)
+            ataquej1 = CrearCarta("ataquej1", 900, 260);
+            defensaj1 = CrearCarta("defensaj1", 900, 400);
+            ataquej2 = CrearCarta("ataquej2", 1020, 260);
+            defensaj2 = CrearCarta("defensaj2", 1020, 400);
+        }
+
+        // ===============================================
+        // CREAR BOTONES
+        // ===============================================
+        private void CrearBotones()
+        {
+            btbocaarriba = CrearBoton("Boca Arriba", 1150, 220, Color.White);
+            btnBocaabajo = CrearBoton("Boca Abajo", 1150, 295, Color.White);
+            btnDetalles = CrearBoton("Detalles", 1150, 380, Color.Gray);
+            btnJugar = CrearBoton("Jugar", 1150, 470, Color.LawnGreen);
+            btnsalir = CrearBoton("Salir del juego", 1150, 565, Color.OrangeRed);
+
+            // Eventos
+            btbocaarriba.Click += btbocaarriba_Click;
+            btnBocaabajo.Click += btnBocaabajo_Click_1;
+            btnDetalles.Click += btnDetalles_Click_1;
+            btnJugar.Click += btnJugar_Click_1;
             btnsalir.Click += (s, e) => Application.Exit();
         }
 
+        // ===============================================
+        // MÉTODOS HELPER
+        // ===============================================
+        private PictureBox CrearCarta(string nombre, int x, int y)
+        {
+            var pb = new PictureBox
+            {
+                Name = nombre,
+                Location = new Point(x, y),
+                Size = new Size(90, 130),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                BackColor = Color.Transparent  // 🔥 SIN BORDES BLANCOS
+            };
+            panel1.Controls.Add(pb);
+            return pb;
+        }
 
+        private Button CrearBoton(string texto, int x, int y, Color color)
+        {
+            var btn = new Button
+            {
+                Text = texto,
+                Location = new Point(x, y),
+                Size = new Size(130, 51),
+                BackColor = color,
+                FlatStyle = FlatStyle.Flat
+            };
+            this.Controls.Add(btn);
+            btn.BringToFront();
+            return btn;
+        }
 
-        // -----------------------------------------
-        // CARGA TODAS LAS CARTAS DE LA CARPETA
-        // -----------------------------------------
+        private void ConfigurarFormulario()
+        {
+            this.ClientSize = new Size(1300, 730);  // 🔥 MÁS ANCHO
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "Yu-Gi-Oh! Showcase";
+        }
 
+        private void ConfigurarClicks()
+        {
+            foreach (var pb in panel1.Controls.OfType<PictureBox>())
+            {
+                pb.Click += (s, e) => { cartaSeleccionada = (PictureBox)s; };
+            }
+        }
 
+        // ===============================================
+        // CARGAR DECK
+        // ===============================================
         private void CargarDeck()
         {
-            // Carpeta "imagenes" al lado del .exe (funciona en cualquier PC)
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "imagenes");
-
-            if (!Directory.Exists(path))
+            string[] posiblesRutas = new[]
             {
-                MessageBox.Show("No existe la carpeta 'imagenes' en:\n" + path);
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "imagenes"),
+                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\imagenes"),
+                Path.Combine(Application.StartupPath, "imagenes")
+            };
+
+            string path = posiblesRutas.FirstOrDefault(Directory.Exists);
+
+            if (path == null)
+            {
+                MessageBox.Show("No se encontró la carpeta 'imagenes'", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             string[] archivos = Directory.GetFiles(path)
-                .Where(f =>
-                    f.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
-                    f.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
-                    f.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+                .Where(f => f.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                            f.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
+                            f.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
                 .ToArray();
 
             if (archivos.Length == 0)
             {
-                MessageBox.Show("No se encontraron imágenes en:\n" + path);
+                MessageBox.Show($"No se encontraron imágenes en:\n{path}");
                 return;
             }
 
             deck.Clear();
-
-            foreach (string archivo in archivos)
+            foreach (var archivo in archivos)
             {
-                try
-                {
-                    deck.Add(Image.FromFile(archivo));
-                }
-                catch { }
+                try { deck.Add(Image.FromFile(archivo)); }
+                catch { /* Ignorar archivos corruptos */ }
             }
         }
 
-
-
-
-
-
-        // -----------------------------------------
-        // REPARTE CARTAS ALEATORIAS AL TABLERO
-        // -----------------------------------------
+        // ===============================================
+        // REPARTIR CARTAS
+        // ===============================================
         private void RepartirCartas()
         {
+            if (deck.Count == 0)
+            {
+                MessageBox.Show("⚠️ El deck está vacío. No se pueden repartir cartas.");
+                return;
+            }
+
             Random rnd = new Random();
 
-            // Mazo del jugador 1 (10 cartas únicas)
-            PictureBox[] cartasJ1 =
+            PictureBox[] mazoJ1 = { carta1j1, carta2j1, carta3j1, carta4j1, carta5j1,
+                                    carta6j1, carta7j1, carta8j1, carta9j1, carta10j1 };
+
+            PictureBox[] mazoJ2 = { carta1j2, carta2j2, carta3j2, carta4j2, carta5j2,
+                                    carta6j2, carta7j2, carta8j2, carta9j2, carta10j2 };
+
+            // Repartir J1
+            var deckJ1 = deck.OrderBy(x => rnd.Next()).Take(10).ToList();
+            for (int i = 0; i < mazoJ1.Length && i < deckJ1.Count; i++)
             {
-        carta1j1, carta2j1, carta3j1, carta4j1, carta5j1,
-        carta6j1, carta7j1, carta8j1, carta9j1, carta10j1
-    };
-
-            // Mazo del jugador 2 (10 cartas únicas)
-            PictureBox[] cartasJ2 =
-            {
-        carta1j2, carta2j2, carta3j2, carta4j2, carta5j2,
-        carta6j2, carta7j2, carta8j2, carta9j2, carta10j2
-    };
-
-            // ---- JUGADOR 1: cartas sin repetir ----
-            List<Image> deckJ1 = new List<Image>(deck);
-
-            foreach (PictureBox pb in cartasJ1)
-            {
-                int index = rnd.Next(deckJ1.Count);
-                pb.Image = deckJ1[index];
-                imagenOriginal[pb] = deckJ1[index];
-
-                deckJ1.RemoveAt(index); // evita repetición en J1
+                mazoJ1[i].Image = deckJ1[i];
+                imagenOriginal[mazoJ1[i]] = deckJ1[i];
             }
 
-            // ---- JUGADOR 2: cartas sin repetir ----
-            // Se usa un deck independiente para que J1 y J2 puedan compartir carta
-            List<Image> deckJ2 = new List<Image>(deck);
-
-            foreach (PictureBox pb in cartasJ2)
+            // Repartir J2
+            var deckJ2 = deck.OrderBy(x => rnd.Next()).Take(10).ToList();
+            for (int i = 0; i < mazoJ2.Length && i < deckJ2.Count; i++)
             {
-                int index = rnd.Next(deckJ2.Count);
-                pb.Image = deckJ2[index];
-                imagenOriginal[pb] = deckJ2[index];
-
-                deckJ2.RemoveAt(index); // evita repetición en J2
+                mazoJ2[i].Image = deckJ2[i];
+                imagenOriginal[mazoJ2[i]] = deckJ2[i];
             }
 
-            // Cartas especiales
+            // Imágenes de mazos y zonas
             Guardarcarta1.Image = Properties.Resources.parte_atrasver;
             Guardarcarta2.Image = Properties.Resources.parte_atrasver;
-
             ataquej1.Image = Properties.Resources.parteatrasmor;
             defensaj1.Image = Properties.Resources.parteatrasgris;
-
             ataquej2.Image = Properties.Resources.parteatrasmor;
             defensaj2.Image = Properties.Resources.parteatrasgris;
         }
 
-        private void PosicionarCartas()
-        {
-            int startX = 200;
-            int espacio = 100;
-
-            // Fila jugador 1
-            PictureBox[] manoJ1 = { carta1j1, carta2j1, carta3j1, carta4j1, carta5j1 };
-
-            for (int i = 0; i < manoJ1.Length; i++)
-                manoJ1[i].Location = new Point(startX + i * espacio, 20);
-
-            // Magias/trampas J1
-            PictureBox[] magiasJ1 = { carta6j1, carta7j1, carta8j1, carta9j1, carta10j1 };
-
-            for (int i = 0; i < magiasJ1.Length; i++)
-                magiasJ1[i].Location = new Point(startX + i * espacio, 160);
-
-            // Zonas ataque/defensa
-            ataquej1.Location = new Point(350, 300);
-            defensaj1.Location = new Point(450, 300);
-
-            ataquej2.Location = new Point(350, 430);
-            defensaj2.Location = new Point(450, 430);
-
-            // Magias/trampas J2
-            PictureBox[] magiasJ2 = { carta6j2, carta7j2, carta8j2, carta9j2, carta10j2 };
-
-            for (int i = 0; i < magiasJ2.Length; i++)
-                magiasJ2[i].Location = new Point(startX + i * espacio, 560);
-
-            // Mano J2
-            PictureBox[] manoJ2 = { carta1j2, carta2j2, carta3j2, carta4j2, carta5j2 };
-
-            for (int i = 0; i < manoJ2.Length; i++)
-                manoJ2[i].Location = new Point(startX + i * espacio, 700);
-        }
-
-
-        // -----------------------------------------
-        // ABRIR CARTA AL HACER CLIC
-        // -----------------------------------------
-        private void AbrirCarta(object sender, EventArgs e)
-        {
-            PictureBox pb = sender as PictureBox;
-
-            if (pb != null && pb.Image != null)
-            {
-                carta vista = new carta(pb.Image);
-                vista.Show();
-            }
-        }
-
-        // Asignamos el mismo evento a todas las cartas
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            carta1j1.Click += AbrirCarta;
-            carta2j1.Click += AbrirCarta;
-            carta3j1.Click += AbrirCarta;
-
-            carta1j2.Click += AbrirCarta;
-            carta2j2.Click += AbrirCarta;
-            carta3j2.Click += AbrirCarta;
-        }
-        private void AjustarTamanos()
-        {
-            foreach (var pb in panel1.Controls.OfType<PictureBox>())
-            {
-                pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                pb.Width = 86;
-                pb.Height = 124;
-            }
-        }
-
-
-
-
+        // ===============================================
+        // EVENTOS DE BOTONES
+        // ===============================================
         private void btnBocaabajo_Click_1(object sender, EventArgs e)
         {
             if (cartaSeleccionada == null) return;
-            if (!imagenOriginal.ContainsKey(cartaSeleccionada)) return;
-
             cartaSeleccionada.Image = Properties.Resources.parte_atras;
         }
 
+        private void btbocaarriba_Click(object sender, EventArgs e)
+        {
+            if (cartaSeleccionada == null || !imagenOriginal.ContainsKey(cartaSeleccionada))
+                return;
 
+            cartaSeleccionada.Image = imagenOriginal[cartaSeleccionada];
+        }
 
         private void btnDetalles_Click_1(object sender, EventArgs e)
         {
             if (cartaSeleccionada == null || cartaSeleccionada.Image == null)
             {
-                MessageBox.Show("Seleccione una carta");
+                MessageBox.Show("Seleccione una carta primero", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -253,21 +295,10 @@ namespace YuGiOh.Showcase.WinForms
             ver.Show();
         }
 
-
         private void btnJugar_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Comienza el duelo");
+            MessageBox.Show("¡Comienza el duelo! ⚔️", "Yu-Gi-Oh",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-
-        private void btbocaarriba_Click(object sender, EventArgs e)
-        {
-            if (cartaSeleccionada == null) return;
-            if (!imagenOriginal.ContainsKey(cartaSeleccionada)) return;
-
-            cartaSeleccionada.Image = imagenOriginal[cartaSeleccionada];
-        }
-
-
     }
 }

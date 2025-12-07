@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj": {}
+    "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj": {
+    "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj",
         "projectName": "YuGiOh.Showcase.Domain",
-        "projectPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj",
-        "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\obj\\",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,17 +75,17 @@
         }
       }
     },
-    "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj": {
+    "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj",
         "projectName": "YuGiOh.Showcase.Infrastructure",
-        "projectPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ROG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\YuGiOh.Showcase.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ROG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -99,8 +99,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj": {
-                "projectPath": "C:\\Users\\ROG\\source\\repos\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj"
+              "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj": {
+                "projectPath": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.Domain\\YuGiOh.Showcase.Domain.csproj"
               }
             }
           }
