@@ -121,9 +121,8 @@ namespace YuGiOh.Showcase.WinForms
             btnsalir.Click += (s, e) => Application.Exit();
         }
 
-        // ===============================================
-        // MÉTODOS HELPER
-        // ===============================================
+        
+        // Sirve para los campos de las cartas 
         private PictureBox CrearCarta(string nombre, int x, int y)
         {
             var pb = new PictureBox
