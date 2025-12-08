@@ -73,9 +73,7 @@ namespace YuGiOh.Showcase.WinForms
             carta10j1 = CrearCarta("carta10j1", 690, 150);
         }
 
-        // ===============================================
-        // CREAR CARTAS JUGADOR 2
-        // ===============================================
+        
         private void CrearCartasJugador2()
         {
             // Fila 1 - Magias/Trampas J2 (MÁS ARRIBA)
