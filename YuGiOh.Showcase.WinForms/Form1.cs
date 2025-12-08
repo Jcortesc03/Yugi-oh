@@ -91,9 +91,7 @@ namespace YuGiOh.Showcase.WinForms
             carta5j2 = CrearCarta("carta5j2", 690, 560);
         }
 
-        // ===============================================
-        // CREAR ZONAS ESPECIALES
-        // ===============================================
+        
         private void CrearZonasEspeciales()
         {
             // Mazos (lado izquierdo)
