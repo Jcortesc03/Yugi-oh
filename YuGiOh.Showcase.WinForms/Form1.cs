@@ -54,9 +54,8 @@ namespace YuGiOh.Showcase.WinForms
             this.Controls.Add(panel1);
         }
 
-        // ===============================================
-        // CREAR CARTAS JUGADOR 1
-        // ===============================================
+        
+        
         private void CrearCartasJugador1()
         {
             // Fila 1 - Mano J1 (arriba)
