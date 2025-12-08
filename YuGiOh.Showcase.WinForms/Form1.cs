@@ -132,7 +132,7 @@ namespace YuGiOh.Showcase.WinForms
                 Location = new Point(x, y),
                 Size = new Size(90, 130),
                 SizeMode = PictureBoxSizeMode.Zoom,
-                BackColor = Color.Transparent  // 🔥 SIN BORDES BLANCOS
+                BackColor = Color.Transparent  
             };
             panel1.Controls.Add(pb);
             return pb;
@@ -151,11 +151,12 @@ namespace YuGiOh.Showcase.WinForms
             this.Controls.Add(btn);
             btn.BringToFront();
             return btn;
-        }
+        } 
+//Adapracion de la pantalla 1300
 
         private void ConfigurarFormulario()
         {
-            this.ClientSize = new Size(1300, 730);  // 🔥 MÁS ANCHO
+            this.ClientSize = new Size(1300, 730);  
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -169,10 +170,7 @@ namespace YuGiOh.Showcase.WinForms
                 pb.Click += (s, e) => { cartaSeleccionada = (PictureBox)s; };
             }
         }
-
-        // ===============================================
-        // CARGAR DECK
-        // ===============================================
+//Carga de imagenes al mazo 
         private void CargarDeck()
         {
             string[] posiblesRutas = new[]
