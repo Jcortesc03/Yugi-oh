@@ -159,7 +159,7 @@ namespace YuGiOh.Showcase.WinForms
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Yu-Gi-Oh! Showcase";
+            this.Text = "Yu-Gi-Oh! ";
         }
 
         private void ConfigurarClicks()
