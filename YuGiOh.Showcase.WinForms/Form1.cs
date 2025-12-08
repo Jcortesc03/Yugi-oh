@@ -76,14 +76,14 @@ namespace YuGiOh.Showcase.WinForms
         
         private void CrearCartasJugador2()
         {
-            // Fila 1 - Magias/Trampas J2 (MÁS ARRIBA)
+            // Fila 1 - Magias/Trampas J2 
             carta6j2 = CrearCarta("carta6j2", 250, 420);
             carta7j2 = CrearCarta("carta7j2", 360, 420);
             carta8j2 = CrearCarta("carta8j2", 470, 420);
             carta9j2 = CrearCarta("carta9j2", 580, 420);
             carta10j2 = CrearCarta("carta10j2", 690, 420);
 
-            // Fila 2 - Mano J2 (abajo)
+            // Fila 2 - Mano J2 
             carta1j2 = CrearCarta("carta1j2", 250, 560);
             carta2j2 = CrearCarta("carta2j2", 360, 560);
             carta3j2 = CrearCarta("carta3j2", 470, 560);
@@ -98,7 +98,7 @@ namespace YuGiOh.Showcase.WinForms
             Guardarcarta1 = CrearCarta("Guardarcarta1", 80, 150);
             Guardarcarta2 = CrearCarta("Guardarcarta2", 80, 420);
 
-            // Zonas de ataque/defensa (más a la derecha y separadas)
+            // Zonas de ataque/defensa 
             ataquej1 = CrearCarta("ataquej1", 900, 260);
             defensaj1 = CrearCarta("defensaj1", 900, 400);
             ataquej2 = CrearCarta("ataquej2", 1020, 260);
