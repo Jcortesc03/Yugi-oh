@@ -94,7 +94,7 @@ namespace YuGiOh.Showcase.WinForms
         
         private void CrearZonasEspeciales()
         {
-            // Mazos (lado izquierdo)
+            // carta defensa ataque 
             Guardarcarta1 = CrearCarta("Guardarcarta1", 80, 150);
             Guardarcarta2 = CrearCarta("Guardarcarta2", 80, 420);
 
