@@ -204,7 +204,7 @@ namespace YuGiOh.Showcase.WinForms
             foreach (var archivo in archivos)
             {
                 try { deck.Add(Image.FromFile(archivo)); }
-                catch { /* Ignorar archivos corruptos */ }
+                catch { /* Ignorar archivos dañados */ }
             }
         }
 //Repartir la baraja
