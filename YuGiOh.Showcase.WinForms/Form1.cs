@@ -104,10 +104,7 @@ namespace YuGiOh.Showcase.WinForms
             ataquej2 = CrearCarta("ataquej2", 1020, 260);
             defensaj2 = CrearCarta("defensaj2", 1020, 400);
         }
-
-        // ===============================================
-        // CREAR BOTONES
-        // ===============================================
+        // Creacion De botones 
         private void CrearBotones()
         {
             btbocaarriba = CrearBoton("Boca Arriba", 1150, 220, Color.White);
