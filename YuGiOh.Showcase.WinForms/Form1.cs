@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -13,15 +13,13 @@ namespace YuGiOh.Showcase.WinForms
         private Dictionary<PictureBox, Image> imagenOriginal = new Dictionary<PictureBox, Image>();
         private PictureBox cartaSeleccionada;
 
-        // PictureBoxes
+        
         private PictureBox carta1j1, carta2j1, carta3j1, carta4j1, carta5j1;
         private PictureBox carta6j1, carta7j1, carta8j1, carta9j1, carta10j1;
         private PictureBox carta1j2, carta2j2, carta3j2, carta4j2, carta5j2;
         private PictureBox carta6j2, carta7j2, carta8j2, carta9j2, carta10j2;
         private PictureBox Guardarcarta1, Guardarcarta2;
         private PictureBox ataquej1, defensaj1, ataquej2, defensaj2;
-
-        // Botones
         private Button btbocaarriba, btnBocaabajo, btnDetalles, btnJugar, btnsalir;
         private Panel panel1;
 
@@ -29,7 +27,7 @@ namespace YuGiOh.Showcase.WinForms
         {
             InitializeComponent();
 
-            // 🎯 TODO SE CREA AQUÍ EN EL CONSTRUCTOR
+            
             CrearPanel();
             CrearCartasJugador1();
             CrearCartasJugador2();
@@ -42,9 +40,9 @@ namespace YuGiOh.Showcase.WinForms
             RepartirCartas();
         }
 
-        // ===============================================
-        // CREAR PANEL DE FONDO
-        // ===============================================
+        
+        
+        
         private void CrearPanel()
         {
             panel1 = new Panel
