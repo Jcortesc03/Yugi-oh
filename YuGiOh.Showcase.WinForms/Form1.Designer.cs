@@ -1,4 +1,4 @@
-﻿namespace YuGiOh.Showcase.WinForms;
+namespace YuGiOh.Showcase.WinForms;
 
 partial class Form1
 {
@@ -23,7 +23,7 @@ partial class Form1
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(1200, 700);
         this.Name = "Form1";
-        this.Text = "Yu-Gi-Oh! ";
+        this.Text = "Yu-Gi-Oh!JSJ  ";
         this.ResumeLayout(false);
     }
 }
