@@ -208,15 +208,12 @@ namespace YuGiOh.Showcase.WinForms
                 catch { /* Ignorar archivos corruptos */ }
             }
         }
-
-        // ===============================================
-        // REPARTIR CARTAS
-        // ===============================================
+//Repartir la baraja
         private void RepartirCartas()
         {
             if (deck.Count == 0)
             {
-                MessageBox.Show("⚠️ El deck está vacío. No se pueden repartir cartas.");
+                MessageBox.Show("El deck está vacío. No se pueden repartir cartas.");
                 return;
             }
 
@@ -252,10 +249,7 @@ namespace YuGiOh.Showcase.WinForms
             ataquej2.Image = Properties.Resources.parteatrasmor;
             defensaj2.Image = Properties.Resources.parteatrasgris;
         }
-
-        // ===============================================
-        // EVENTOS DE BOTONES
-        // ===============================================
+//Botones Del panel 
         private void btnBocaabajo_Click_1(object sender, EventArgs e)
         {
             if (cartaSeleccionada == null) return;
