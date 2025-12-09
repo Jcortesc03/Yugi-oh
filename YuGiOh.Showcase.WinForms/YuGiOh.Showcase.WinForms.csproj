@@ -1,11 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="LibVLCSharp" Version="3.7.0" />
+		<PackageReference Include="LibVLCSharp.WinForms" Version="3.7.0" />
+		<PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.20" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="imagenes\exodiaelprohibido.jpg" />
+		<Content Include="imagenes\intro.mp4">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="bin\Debug\net8.0-windows\" />
+	</ItemGroup>
 
 </Project>

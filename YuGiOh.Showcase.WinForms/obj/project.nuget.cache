@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "jZjXG8K2ots=",
   "success": true,
   "projectFilePath": "C:\\Users\\juanc\\Desktop\\uni\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
@@ -8,6 +9,15 @@
     "C:\\Users\\juanc\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
     "C:\\Users\\juanc\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
     "C:\\Users\\juanc\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.22\\microsoft.netcore.app.host.win-x64.8.0.22.nupkg.sha512"
+=======
+  "dgSpecHash": "nQWSNWvGglI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\PC\\source\\repos\\Yugi-oh1\\Yugi-oh\\YuGiOh.Showcase.WinForms\\YuGiOh.Showcase.WinForms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\libvlcsharp\\3.7.0\\libvlcsharp.3.7.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\libvlcsharp.winforms\\3.7.0\\libvlcsharp.winforms.3.7.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\videolan.libvlc.windows\\3.0.20\\videolan.libvlc.windows.3.0.20.nupkg.sha512"
+>>>>>>> origin/sean2
   ],
   "logs": []
 }
